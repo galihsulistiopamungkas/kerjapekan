@@ -83,7 +83,7 @@ a:hover {color:#0379C4}
 }
 /* ==== Related Post Widget End ==== */
 </style>
-<script type="text/javascript" src="https://kerja-pekan.blogspot.com/feeds/posts/summary?alt=json-in-script&amp;orderby=updated&amp;max-results=0&amp;callback=randomRelatedIndex"></script><script type="text/javascript" src="https://kerja-pekan.blogspot.com/feeds/posts/summary?alt=json-in-script&amp;orderby=updated&amp;start-index=29&amp;max-results=6&amp;callback=showRelatedPost"></script></head>
+<script type="text/javascript" src="<data:blog.homepageUrl>/feeds/posts/summary?alt=json-in-script&amp;orderby=updated&amp;max-results=0&amp;callback=randomRelatedIndex"></script><script type="text/javascript" src="<data:blog.homepageUrl>/feeds/posts/summary?alt=json-in-script&amp;orderby=updated&amp;start-index=29&amp;max-results=6&amp;callback=showRelatedPost"></script></head>
 <body>
 <div id="related-post" class="related-post"><span style="display:block;clear:both;"></span></li></ul><span style="display:block;clear:both;"></span></div>
 <script>
