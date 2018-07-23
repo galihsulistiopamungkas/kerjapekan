@@ -13,28 +13,50 @@ body {
   overflow:hidden;
 }
 iframe{border:0;}
+/* taleh related post */
+#related-posts {width: 100%;padding: 0;list-style-type: none;margin-top: 20px;}
+#related-posts b{padding-bottom: 15px;display:block;}
+#related-posts ul{margin:0;list-style: none !important;}
+#related-posts li{display: inline-block;width: 100%;margin-bottom: 10px}
+#related-posts li:nth-child(3n+3){margin-right: 0;} 
+#related-posts li a{position: relative;display: block;padding:10px 10px 10px 10px;border-radius: 0px;text-decoration: none; font-weight: bold;color: #fff;background-color:#3f485d;} 
+
+/* Taleh warna related post */
+#related-posts li:nth-child(6n+1) a{border-left:6px solid #ff9292;}
+#related-posts li:nth-child(6n+1) a:hover{border-left:12px solid #ff9292;} 
+#related-posts li:nth-child(6n+2) a{border-left:6px solid #b58eea;}
+#related-posts li:nth-child(6n+2) a:hover{border-left:12px solid #b58eea;}
+#related-posts li:nth-child(6n+3) a{border-left:6px solid #a0c2ec}
+#related-posts li:nth-child(6n+3) a:hover{border-left:12px solid #a0c2ec;}
+#related-posts li:nth-child(6n+4) a{border-left:6px solid #9be6a7;}
+#related-posts li:nth-child(6n+4) a:hover{border-left:12px solid #9be6a7;}
+#related-posts li:nth-child(6n+5) a{border-left:6px solid #eeee7a}
+#related-posts li:nth-child(6n+5) a:hover{border-left:12px solid #eeee7a;}
+#related-posts li:nth-child(6n+6) a{border-left:6px solid #fac17e;}
+#related-posts li:nth-child(6n+6) a:hover{border-left:12px solid #fac17e;}
 </style>
-<script>
-function getQueryVariable(variable) {
-	var query = window.location.search.substring(1);
-	var vars = query.split("&");
-	for (var i=0;i<vars.length;i++) {
-		var pair = vars[i].split("=");
-		if(pair[0] == variable){return pair[1];}
-	}
-	return(false);
-}
-var domain = getQueryVariable("url");
-var colorlink = getQueryVariable("color");
-var colorback = getQueryVariable("back");
-var desc = getQueryVariable("item");
-var styles = getQueryVariable("style");
-var labels = getQueryVariable("label");
+<script type='text/javascript'>
+//<![CDATA[
+var relatedTitles=new Array();var relatedTitlesNum=0;var relatedUrls=new Array();function related_results_labels(c){for(var b=0;b<c.feed.entry.length;b++){var d=c.feed.entry[b];relatedTitles[relatedTitlesNum]=d.title.$t;for(var a=0;a<d.link.length;a++){if(d.link[a].rel=="alternate"){relatedUrls[relatedTitlesNum]=d.link[a].href;relatedTitlesNum++;break}}}}function removeRelatedDuplicates(){var b=new Array(0);var c=new Array(0);for(var a=0;a<relatedUrls.length;a++){if(!contains(b,relatedUrls[a])){b.length+=1;b[b.length-1]=relatedUrls[a];c.length+=1;c[c.length-1]=relatedTitles[a]}}relatedTitles=c;relatedUrls=b}function contains(b,d){for(var c=0;c<b.length;c++){if(b[c]==d){return true}}return false}function printRelatedLabels(a){for(var b=0;b<relatedUrls.length;b++){if(relatedUrls[b]==a){relatedUrls.splice(b,1);relatedTitles.splice(b,1)}}var c=Math.floor((relatedTitles.length-1)*Math.random());var b=0;if(relatedTitles.length>1)document.write("<ul>");while(b<relatedTitles.length&&b<20&&b<maxresults){document.write('<li><a href="'+relatedUrls[c]+'">'+relatedTitles[c]+"</a></li>");if(c<relatedTitles.length-1){c++}else{c=0}b++}document.write("</ul>");relatedUrls.splice(0,relatedUrls.length);relatedTitles.splice(0,relatedTitles.length)};
+//]]>
 </script>
 </head>
 <body>
-<script>
-document.write('<iframe src="https://feed.mikle.com/widget/v2/?widget_parameter=%7B%22type%22%3A%22%22%2C%22sources%22%3A%5B%7B%22source%22%3A%22http%3A%2F%2F'+domain+'%2Ffeeds%2Fposts%2Fdefault%2F-%2F'+labels+'%22%2C%22type%22%3A%22RSS%22%7D%5D%2C%22name%22%3A%22%22%2C%22width%22%3A0%2C%22height%22%3A%22470%22%2C%22height_by_article%22%3A0%2C%22target%22%3A%22_blank%22%2C%22font%22%3A%22Arial%2C%20Helvetica%2C%20sans-serif%22%2C%22title_font_size%22%3A%2216%22%2C%22item_title_font_size%22%3A%2216%22%2C%22item_description_font_size%22%3A%2212%22%2C%22border%22%3A%22off%22%2C%22css_url%22%3A%22https%3A%2F%2Fcdn.rawgit.com%2Fkangmousir%2Fmy-js%2F22080391%2Fstyle.css%22%2C%22responsive%22%3A%22on%22%2C%22text_direction%22%3A%22left%22%2C%22text_alignment%22%3A%22left%22%2C%22corner%22%3A%22square%22%2C%22scroll%22%3A%22on%22%2C%22auto_scroll%22%3A%22on%22%2C%22auto_scroll_direction%22%3A%22up%22%2C%22auto_scroll_step_speed%22%3A%224%22%2C%22auto_scroll_mc_speed%22%3A%2220%22%2C%22sort%22%3A%22rnd%22%2C%22title%22%3A%22off%22%2C%22title_sentence%22%3A%22%22%2C%22title_link%22%3A%22%22%2C%22title_bgcolor%22%3A%22%23ffffff%22%2C%22title_color%22%3A%22%23505659%22%2C%22title_bgimage%22%3A%22%22%2C%22item_bgcolor%22%3A%22%23'+colorback+'%22%2C%22item_bgimage%22%3A%22%22%2C%22item_title_length%22%3A%22200%22%2C%22item_title_color%22%3A%22%23'+colorlink+'%22%2C%22item_border_bottom%22%3A%22on%22%2C%22item_description%22%3A%22'+desc+'%22%2C%22item_link%22%3A%22off%22%2C%22item_description_length%22%3A%22150%22%2C%22item_description_color%22%3A%22%23'+colorlink+'%22%2C%22item_date%22%3A%22off%22%2C%22item_date_format%22%3A%22%25b%20%25e%2C%20%25Y%20%25k%3A%25M%22%2C%22item_date_timezone%22%3A%22%22%2C%22item_description_style%22%3A%22'+styles+'%22%2C%22item_thumbnail%22%3A%22crop%22%2C%22item_thumbnail_selection%22%3A%22auto%22%2C%22article_num%22%3A%229999%22%2C%22item_player%22%3A%22youtube%22%2C%22keyword_inc%22%3A%22%22%2C%22keyword_exc%22%3A%22%22%7D" scrolling="no" style="width:100%;height:420px;overflow:hidden;"/>');
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+
+<div id='related-posts'>
+<b>Lowongan Kerja :</b>
+
+
+
+<b:loop values='data:posts' var='post'>
+<script expr:src='&quot;/feeds/posts/default/-/Loker%20Juli%202018?alt=json-in-script&amp;callback=related_results_labels&amp;max-results=50&quot;' type='text/javascript'/>
+</b:loop>
+<script type='text/javascript'>
+var maxresults=50;
+removeRelatedDuplicates(); printRelatedLabels(&quot;<data:post.url/>&quot;);
 </script>
+</div><div class='clear'/>
+  </b:if>
 </body>
 </html>
